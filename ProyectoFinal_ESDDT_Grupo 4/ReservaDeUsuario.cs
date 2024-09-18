@@ -166,7 +166,7 @@ namespace ProyectoFinal_ESDDT_Grupo_4
                 if (doctor.Horarios[horarioSeleccionado - 1].Disponible)
                 {
                     doctor.Horarios[horarioSeleccionado - 1].Disponible = false;  // Marcar el horario como ocupado
-                    Console.WriteLine("Cita reservada exitosamente.");
+                    ConfirmacionDePago.confirmacionDePago();
                 }
                 else
                 {
