@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal_ESDDT_Grupo_4
 {
-    internal class ReservaDeUsuario
+    public class ReservaDeUsuario
     {
         public static void ReservaDeCita(string[] args)
         {
