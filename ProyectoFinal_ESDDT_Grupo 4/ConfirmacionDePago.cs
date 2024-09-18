@@ -10,6 +10,7 @@ namespace ProyectoFinal_ESDDT_Grupo_4
     {
         public static void confirmacionDePago()
         {
+            
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("|==================================|");
             Console.WriteLine("|      Confirmación de Reserva     |");

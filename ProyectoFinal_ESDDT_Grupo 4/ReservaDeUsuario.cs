@@ -141,8 +141,6 @@ namespace ProyectoFinal_ESDDT_Grupo_4
                     Console.WriteLine("Selección cancelada.");
                 }
             }
-
-            Console.WriteLine("Presione Enter para regresar al menú principal...");
         }
 
         static void MostrarHorarios(NodoDoctor doctor)
@@ -166,6 +164,7 @@ namespace ProyectoFinal_ESDDT_Grupo_4
                 if (doctor.Horarios[horarioSeleccionado - 1].Disponible)
                 {
                     doctor.Horarios[horarioSeleccionado - 1].Disponible = false;  // Marcar el horario como ocupado
+                    Console.Clear();
                     ConfirmacionDePago.confirmacionDePago();
                 }
                 else

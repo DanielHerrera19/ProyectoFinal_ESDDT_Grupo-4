@@ -14,9 +14,11 @@ namespace ProyectoFinal_ESDDT_Grupo_4
             do
             {
                 Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("---------------------------------------------");
                 Console.WriteLine("             PERSONAL MEDICO                 ");
                 Console.WriteLine("---------------------------------------------");
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("1. Disponibilidad de Sedes");
                 Console.WriteLine("2. Disponibilidad de Horarios");
                 Console.WriteLine("3. Gestion de citas reservadas");
@@ -57,9 +59,11 @@ namespace ProyectoFinal_ESDDT_Grupo_4
             do
             {
                 Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("---------------------------------------------");
                 Console.WriteLine("USUARIO");
                 Console.WriteLine("---------------------------------------------");
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("1. Agendar cita");
                 Console.WriteLine("2. Resultado medico");
                 Console.WriteLine("3. Farmacia");
