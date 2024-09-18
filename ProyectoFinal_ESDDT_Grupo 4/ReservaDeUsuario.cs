@@ -100,6 +100,53 @@ namespace ProyectoFinal_ESDDT_Grupo_4
                 return sede;
             }
         }
-        //Hola
+
+        static void MostrarSede(NodoSede sede)
+        {
+            Console.Clear();
+            Console.WriteLine("Sede seleccionada: " + sede.Nombre);
+            Console.WriteLine("Doctores disponibles:");
+
+            NodoDoctor doctorActual = sede.Doctores;
+            if (doctorActual == null)
+            {
+                Console.WriteLine("No hay doctores asignados a esta sede.");
+            }
+            else
+            {
+                int doctorCount = 1;
+                while (doctorActual != null)
+                {
+                    Console.WriteLine("[" + doctorCount + "] " + doctorActual.Nombre + " (Especialidad: " + doctorActual.Especialidad + ")");
+                    doctorActual = doctorActual.Siguiente;
+                    doctorCount++;
+                }
+
+                Console.WriteLine("Seleccione un doctor (o 0 para cancelar):");
+                string opcion = Console.ReadLine();
+                int doctorSeleccionado;
+
+                if (int.TryParse(opcion, out doctorSeleccionado) && doctorSeleccionado > 0 && doctorSeleccionado <= doctorCount)
+                {
+                    doctorActual = sede.Doctores;
+                    for (int i = 1; i < doctorSeleccionado; i++)
+                    {
+                        doctorActual = doctorActual.Siguiente;
+                    }
+
+                    MostrarHorarios(doctorActual);
+                }
+                else
+                {
+                    Console.WriteLine("Selección cancelada.");
+                }
+            }
+
+            Console.WriteLine("Presione Enter para regresar al menú principal...");
+        }
+
+
+
+
     }
 }
