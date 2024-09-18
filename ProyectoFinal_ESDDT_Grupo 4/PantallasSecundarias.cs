@@ -60,15 +60,9 @@ namespace ProyectoFinal_ESDDT_Grupo_4
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Red;
-<<<<<<< HEAD
                 Console.WriteLine("|---------------------------|");
                 Console.WriteLine("|         USUARIO           |");
                 Console.WriteLine("|---------------------------|");
-=======
-                Console.WriteLine("---------------------------------------------");
-                Console.WriteLine("                    USUARIO                  ");
-                Console.WriteLine("---------------------------------------------");
->>>>>>> 73a2ed8b013ac4eaf001a9e1e7426ae51e50e9d0
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("1. Agendar cita");
                 Console.WriteLine("2. Resultado medico");
