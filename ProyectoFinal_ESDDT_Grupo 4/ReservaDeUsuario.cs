@@ -101,7 +101,7 @@ namespace ProyectoFinal_ESDDT_Grupo_4
             return sede;
         }
 
-        public static void MostrarSede(NodoSede sede)
+        static void MostrarSede(NodoSede sede)
         {
             Console.Clear();
             Console.WriteLine("Sede seleccionada: " + sede.Nombre);
@@ -145,7 +145,7 @@ namespace ProyectoFinal_ESDDT_Grupo_4
             Console.WriteLine("Presione Enter para regresar al menú principal...");
         }
 
-        public static void MostrarHorarios(NodoDoctor doctor)
+        static void MostrarHorarios(NodoDoctor doctor)
         {
             Console.Clear();
             Console.WriteLine("Horarios disponibles para " + doctor.Nombre + ":");
