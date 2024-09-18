@@ -16,7 +16,7 @@ namespace ProyectoFinal_ESDDT_Grupo_4
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("|-----------------------------------|");
-                Console.WriteLine("|         PERSONAL MEDICO-           |");
+                Console.WriteLine("|         PERSONAL MEDICO           |");
                 Console.WriteLine("|-----------------------------------|");
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("1. Disponibilidad de Sedes");
