@@ -8,7 +8,7 @@ namespace ProyectoFinal_ESDDT_Grupo_4
 {
     public class ReservaDeUsuario
     {
-        public static void ReservaDeCita(string[] args)
+        public static void ReservaDeCita()
         {
             NodoSede sanJuanDeLurigancho = CrearSedeConDoctores("San Juan de Lurigancho", new string[] { "Dr. Juan Perez", "Dra. Maria Sanchez", "Dr. Julio " });
             NodoSede Magdalena = CrearSedeConDoctores("Magdalena", new string[] { "Dr. Carlos Gomez", "Dra. Ana Lopez" });

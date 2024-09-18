@@ -28,7 +28,7 @@ namespace ProyectoFinal_ESDDT_Grupo_4
                 switch (opcion)
                 {
                     case 1:
-                        opcion = ReservaDeUsuario.ReservaDeCita();
+                        
                         break;
                     case 2:
 
@@ -70,7 +70,7 @@ namespace ProyectoFinal_ESDDT_Grupo_4
                 switch (opcion)
                 {
                     case 1:
-                        opcion = ReservaDeUsuario.ReservaDeCita();
+                        ReservaDeUsuario.ReservaDeCita();
                         break;
                     case 2:
 
