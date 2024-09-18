@@ -66,7 +66,7 @@ namespace ProyectoFinal_ESDDT_Grupo_4
         }
 
 
-        static void MostrarSede(NodoSede sede)
+        public static void MostrarSede(NodoSede sede)
         {
             Console.Clear();
             Console.WriteLine("Sede seleccionada: " + sede.Nombre);
@@ -109,6 +109,7 @@ namespace ProyectoFinal_ESDDT_Grupo_4
 
             Console.WriteLine("Presione Enter para regresar al menú principal...");
         }
+
         public static void MostrarHorarios(NodoDoctor doctor)
         {
             Console.Clear();
@@ -142,5 +143,31 @@ namespace ProyectoFinal_ESDDT_Grupo_4
                 Console.WriteLine("Reserva cancelada.");
             }
         }
+
+
+        class NodoSede
+        {
+            public string Nombre;
+            public NodoDoctor Doctores;
+            public NodoSede Siguiente;
+        }
+
+        class NodoDoctor
+        {
+            public string Nombre;
+            public string Especialidad;
+            public NodoDoctor Siguiente;
+            public List<Horario> Horarios { get; set; } = new List<Horario>();
+        }
+
+        class Horario
+        {
+            public string DiaSemana { get; set; }
+            public string HoraInicio { get; set; }
+            public string HoraFin { get; set; }
+            public bool Disponible { get; set; }  // Indica si el horario está disponible
+        }
+
+
     }
 }
