@@ -8,7 +8,7 @@ namespace ProyectoFinal_ESDDT_Grupo_4
 {
     internal class ReservaDeUsuario
     {
-        static void ReservaDeCita(string[] args)
+        public static void ReservaDeCita(string[] args)
         {
             NodoSede sanJuanDeLurigancho = CrearSedeConDoctores("San Juan de Lurigancho", new string[] { "Dr. Juan Perez", "Dra. Maria Sanchez", "Dr. Julio " });
             NodoSede Magdalena = CrearSedeConDoctores("Magdalena", new string[] { "Dr. Carlos Gomez", "Dra. Ana Lopez" });
@@ -63,43 +63,8 @@ namespace ProyectoFinal_ESDDT_Grupo_4
                 Console.ReadLine();
                 Console.ReadKey();
             }
-            static NodoSede CrearSedeConDoctores(string nombreSede, string[] nombresDoctores)
-            {
-                NodoSede sede = new NodoSede { Nombre = nombreSede };
-
-                NodoDoctor ultimoDoctor = null;
-                foreach (string nombreDoctor in nombresDoctores)
-                {
-                    NodoDoctor nuevoDoctor = new NodoDoctor
-                    {
-                        Nombre = nombreDoctor,
-                        Especialidad = "Oftalmología",
-                        Horarios = new List<Horario>
-             {
-                 new Horario { DiaSemana = "Lunes", HoraInicio = "8:00 am", HoraFin = "8:45 am", Disponible = true },
-                 new Horario { DiaSemana = "Lunes", HoraInicio = "9:00 am", HoraFin = "9:45 am", Disponible = true },
-                 new Horario { DiaSemana = "Martes", HoraInicio = "10:00 am", HoraFin = "10:45 am", Disponible = true },
-                 new Horario { DiaSemana = "Miercoles", HoraInicio = "12:00 am", HoraFin = "12:45 am", Disponible = true },
-                 new Horario { DiaSemana = "Jueves", HoraInicio = "13:00 pm", HoraFin = "13:45 pm", Disponible = true },
-                 new Horario { DiaSemana = "Viernes", HoraInicio = "15:00 pm", HoraFin = "15:45 pm", Disponible = true },
-             }
-                    };
-
-                    if (ultimoDoctor == null)
-                    {
-                        sede.Doctores = nuevoDoctor;
-                    }
-                    else
-                    {
-                        ultimoDoctor.Siguiente = nuevoDoctor;
-                    }
-
-                    ultimoDoctor = nuevoDoctor;
-                }
-
-                return sede;
-            }
         }
+
 
         static void MostrarSede(NodoSede sede)
         {
@@ -144,9 +109,38 @@ namespace ProyectoFinal_ESDDT_Grupo_4
 
             Console.WriteLine("Presione Enter para regresar al menú principal...");
         }
+        public static void MostrarHorarios(NodoDoctor doctor)
+        {
+            Console.Clear();
+            Console.WriteLine("Horarios disponibles para " + doctor.Nombre + ":");
+            for (int i = 0; i < doctor.Horarios.Count; i++)
+            {
+                if (doctor.Horarios[i].Disponible)
+                {
+                    Console.WriteLine("[" + (i + 1) + "] " + doctor.Horarios[i].DiaSemana + " de " + doctor.Horarios[i].HoraInicio + " a " + doctor.Horarios[i].HoraFin);
+                }
+            }
 
+            Console.WriteLine("Seleccione un horario para reservar (o 0 para cancelar):");
+            string opcion = Console.ReadLine();
+            int horarioSeleccionado;
 
-
-
+            if (int.TryParse(opcion, out horarioSeleccionado) && horarioSeleccionado > 0 && horarioSeleccionado <= doctor.Horarios.Count)
+            {
+                if (doctor.Horarios[horarioSeleccionado - 1].Disponible)
+                {
+                    doctor.Horarios[horarioSeleccionado - 1].Disponible = false;  // Marcar el horario como ocupado
+                    Console.WriteLine("Cita reservada exitosamente.");
+                }
+                else
+                {
+                    Console.WriteLine("El horario ya está ocupado.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Reserva cancelada.");
+            }
+        }
     }
 }
