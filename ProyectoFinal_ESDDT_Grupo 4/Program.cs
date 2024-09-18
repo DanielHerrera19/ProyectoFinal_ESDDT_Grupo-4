@@ -14,9 +14,11 @@ namespace ProyectoFinal_ESDDT_Grupo_4
             do
             {
                 Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("-------------------------------------");
                 Console.WriteLine("  Bienvenido a clinica oftalmologica ");
                 Console.WriteLine("-------------------------------------");
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("*                                   ");
                 Console.WriteLine("             ▄█████▄               ");
                 Console.WriteLine("           ███  █  ███             ");
