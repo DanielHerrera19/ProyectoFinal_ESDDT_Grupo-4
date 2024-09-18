@@ -61,7 +61,7 @@ namespace ProyectoFinal_ESDDT_Grupo_4
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("---------------------------------------------");
-                Console.WriteLine("USUARIO");
+                Console.WriteLine("                    USUARIO                  ");
                 Console.WriteLine("---------------------------------------------");
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("1. Agendar cita");
