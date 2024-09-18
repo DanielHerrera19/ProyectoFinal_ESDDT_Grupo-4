@@ -12,9 +12,9 @@ namespace ProyectoFinal_ESDDT_Grupo_4
         {
             
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("|==================================|");
+            Console.WriteLine("|----------------------------------|");
             Console.WriteLine("|      Confirmación de Reserva     |");
-            Console.WriteLine("|==================================|\n");
+            Console.WriteLine("|----------------------------------|\n");
 
             Console.WriteLine("Ingrese el número de la tarjeta :");
 

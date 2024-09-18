@@ -15,9 +15,9 @@ namespace ProyectoFinal_ESDDT_Grupo_4
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("---------------------------------------------");
-                Console.WriteLine("             PERSONAL MEDICO                 ");
-                Console.WriteLine("---------------------------------------------");
+                Console.WriteLine("|-----------------------------------|");
+                Console.WriteLine("|         PERSONAL MEDICO           |");
+                Console.WriteLine("|-----------------------------------|");
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("1. Disponibilidad de Sedes");
                 Console.WriteLine("2. Disponibilidad de Horarios");
@@ -60,16 +60,16 @@ namespace ProyectoFinal_ESDDT_Grupo_4
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("---------------------------------------------");
-                Console.WriteLine("USUARIO");
-                Console.WriteLine("---------------------------------------------");
+                Console.WriteLine("|---------------------------|");
+                Console.WriteLine("|         USUARIO           |");
+                Console.WriteLine("|---------------------------|");
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("1. Agendar cita");
                 Console.WriteLine("2. Resultado medico");
                 Console.WriteLine("3. Farmacia");
                 Console.WriteLine("4. Editar Perfil");
                 Console.WriteLine("5. Salir/atras");
-                Console.WriteLine("-------------------------------------");
+                Console.WriteLine("----------------------------");
                 Console.WriteLine("Eliga opcion:"); opcion = int.Parse(Console.ReadLine());
                 switch (opcion)
                 {

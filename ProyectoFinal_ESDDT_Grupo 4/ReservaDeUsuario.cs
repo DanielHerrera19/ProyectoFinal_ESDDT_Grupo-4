@@ -23,9 +23,9 @@ namespace ProyectoFinal_ESDDT_Grupo_4
                 Console.Clear();
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("--------------------------");
-                Console.WriteLine("--------- SEDES ----------");
-                Console.WriteLine("--------------------------");
+                Console.WriteLine("|------------------------|");
+                Console.WriteLine("|          SEDES         |");
+                Console.WriteLine("|------------------------|");
                 Console.WriteLine("¡Bienvenido!");
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("- ¿En qué sede desea reservar su cita? : ");
