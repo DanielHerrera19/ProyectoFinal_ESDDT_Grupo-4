@@ -63,6 +63,42 @@ namespace ProyectoFinal_ESDDT_Grupo_4
                 Console.ReadLine();
                 Console.ReadKey();
             }
+            static NodoSede CrearSedeConDoctores(string nombreSede, string[] nombresDoctores)
+            {
+                NodoSede sede = new NodoSede { Nombre = nombreSede };
+
+                NodoDoctor ultimoDoctor = null;
+                foreach (string nombreDoctor in nombresDoctores)
+                {
+                    NodoDoctor nuevoDoctor = new NodoDoctor
+                    {
+                        Nombre = nombreDoctor,
+                        Especialidad = "Oftalmología",
+                        Horarios = new List<Horario>
+             {
+                 new Horario { DiaSemana = "Lunes", HoraInicio = "8:00 am", HoraFin = "8:45 am", Disponible = true },
+                 new Horario { DiaSemana = "Lunes", HoraInicio = "9:00 am", HoraFin = "9:45 am", Disponible = true },
+                 new Horario { DiaSemana = "Martes", HoraInicio = "10:00 am", HoraFin = "10:45 am", Disponible = true },
+                 new Horario { DiaSemana = "Miercoles", HoraInicio = "12:00 am", HoraFin = "12:45 am", Disponible = true },
+                 new Horario { DiaSemana = "Jueves", HoraInicio = "13:00 pm", HoraFin = "13:45 pm", Disponible = true },
+                 new Horario { DiaSemana = "Viernes", HoraInicio = "15:00 pm", HoraFin = "15:45 pm", Disponible = true },
+             }
+                    };
+
+                    if (ultimoDoctor == null)
+                    {
+                        sede.Doctores = nuevoDoctor;
+                    }
+                    else
+                    {
+                        ultimoDoctor.Siguiente = nuevoDoctor;
+                    }
+
+                    ultimoDoctor = nuevoDoctor;
+                }
+
+                return sede;
+            }
         }
 
     }
