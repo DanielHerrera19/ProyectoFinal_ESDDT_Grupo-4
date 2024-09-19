@@ -10,7 +10,7 @@ namespace ProyectoFinal_ESDDT_Grupo_4
     {
         public static void confirmacionDePago()
         {
-            
+
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("|----------------------------------|");
             Console.WriteLine("|      Confirmación de Reserva     |");
@@ -43,7 +43,7 @@ namespace ProyectoFinal_ESDDT_Grupo_4
             if (int.TryParse(mesExp, out int mes) && int.TryParse(añoExp, out int año))
             {
                 //Validamos el rango del mes
-                if (mes < 1 || mes > 12)
+                if (mes < 1 && mes > 12)
                 {
                     Console.WriteLine("Mes no válido. Debe estar entre 01 y 12.");
                     return;
@@ -98,7 +98,7 @@ namespace ProyectoFinal_ESDDT_Grupo_4
             }
             else
             {
-                Console.WriteLine("CVV no válido. Debe ser un número de 3 o 4 dígitos.");
+                Console.WriteLine("CVV no válido. Debe ser un número de 3 dígitos.");
                 ingresarCvv();
             }
         }
@@ -115,9 +115,11 @@ namespace ProyectoFinal_ESDDT_Grupo_4
             else
             {
                 Console.WriteLine("DNI no válido. Debe ser un número de 8 dígitos.");
-                Console.ReadLine();
 
                 ingresarDni();
+                Console.ReadLine();
+
+               
             }
         }
     }
