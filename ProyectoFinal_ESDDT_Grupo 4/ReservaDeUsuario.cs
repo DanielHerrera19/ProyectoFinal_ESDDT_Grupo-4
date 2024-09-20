@@ -165,7 +165,13 @@ namespace ProyectoFinal_ESDDT_Grupo_4
                 {
                     doctor.Horarios[horarioSeleccionado - 1].Disponible = false;  // Marcar el horario como ocupado
                     Console.Clear();
-                    ConfirmacionDePago.confirmacionDePago();
+                    ConfirmacionDePago.confirmacionDePago();                    
+                    ConfirmacionDePago.ingresarTarjeta();
+                    ConfirmacionDePago.ingresarMes();                   
+                    ConfirmacionDePago.ingresarAño();
+                    ConfirmacionDePago.ingresarCvv();
+                    ConfirmacionDePago.ingresarDni();
+
                 }
                 else
                 {

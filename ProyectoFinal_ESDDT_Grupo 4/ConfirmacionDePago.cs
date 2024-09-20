@@ -16,6 +16,10 @@ namespace ProyectoFinal_ESDDT_Grupo_4
             Console.WriteLine("|      Confirmación de Reserva     |");
             Console.WriteLine("|----------------------------------|\n");
 
+            
+        }   
+        public static void ingresarTarjeta()
+        {
             Console.WriteLine("Ingrese el número de la tarjeta :");
 
             string numero = Console.ReadLine();
@@ -27,65 +31,63 @@ namespace ProyectoFinal_ESDDT_Grupo_4
             }
             else
             {
-                Console.WriteLine("Número de tarjeta no válido. Debe contener exactamente 16 dígitos.");
-                Console.ReadLine();
-                Console.Clear();
-                confirmacionDePago();
+                Console.WriteLine("Número de tarjeta no válido. Debe contener exactamente 16 dígitos.");              
+                ingresarTarjeta();
+
+                return;
             }
-
-
+        }
+        public static void ingresarMes()
+        {
+            //Solicitar al usuario que ingrese el mes de vencimiento
             Console.Write("Mes(MM): ");
             string mesExp = Console.ReadLine();
 
-            Console.Write("Año(YYYY): ");
-            string añoExp = Console.ReadLine();
-
-            if (int.TryParse(mesExp, out int mes) && int.TryParse(añoExp, out int año))
+            if(int.TryParse(mesExp, out int mes))
             {
-                //Validamos el rango del mes
-                if (mes < 1 && mes > 12)
+                if (mes >= 1 && mes <= 12)
                 {
-                    Console.WriteLine("Mes no válido. Debe estar entre 01 y 12.");
-                    return;
-                }
-
-                //Obtenemos la fecha actual
-                DateTime fechaActual = DateTime.Now;
-                int añoActual = fechaActual.Year;
-                int mesActual = fechaActual.Month;
-
-                //Vemos la fecha de expiración
-                DateTime expiracion = new DateTime(año, mes, DateTime.DaysInMonth(año, mes));
-
-                //Verificamos si la tarjeta ha expirado
-                if (año < añoActual || año == añoActual && mes < mesActual)
-                {
-                    Console.WriteLine("La tarjeta ha expirado.");
+                    Console.WriteLine();
                 }
                 else
                 {
-                    Console.WriteLine();
+                    Console.WriteLine("El mes ingresado no es válido. Debe estar entre 1 y 12.");
+                    ingresarMes();
                 }
             }
             else
             {
-                Console.WriteLine("Entrada no válida. Asegúrese de ingresar números.");
+                Console.WriteLine("Entrada no válida. Por favor ingrese un número.");
+                ingresarMes();
             }
-
-            ingresarCvv();
-            ingresarDni();
-
-
-            Console.Clear();
-            Console.WriteLine("=========================================\n");
-            Console.WriteLine("\n ¡Tu cita ha sido registrada con éxito\n ");
-            Console.WriteLine(" \n=========================================\n");
-            Console.WriteLine("Presione cualquier tecla para salir...");
-
-            Console.ReadKey();
-
-
         }
+        public static void ingresarAño()
+        {
+            //Solicitar al usuario que ingrese el año de expiración
+            Console.Write("Año(YYYY): ");
+            string añoExp = Console.ReadLine();
+             
+            if (int.TryParse(añoExp, out int año))
+            {
+                int añoActual = DateTime.Now.Year;
+
+                // Validar que el año sea igual o mayor al actual
+                if (año >= añoActual && año <= añoActual + 10)
+                {
+                    Console.WriteLine();
+                }
+                else
+                {
+                    Console.WriteLine("El año ingresado no es válido. Debe ser un año futuro razonable.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Entrada no válida. Por favor ingrese un número de 4 dígitos.");
+                ingresarAño();
+            }
+        }
+
         public static void ingresarCvv()
         {
             //Solicitar al usuario el CVV            
@@ -117,10 +119,16 @@ namespace ProyectoFinal_ESDDT_Grupo_4
                 Console.WriteLine("DNI no válido. Debe ser un número de 8 dígitos.");
 
                 ingresarDni();
-                Console.ReadLine();
-
                
             }
+
+            Console.Clear();
+            Console.WriteLine("=========================================\n");
+            Console.WriteLine("\n ¡Tu cita ha sido registrada con éxito\n ");
+            Console.WriteLine(" \n=========================================\n");
+            Console.WriteLine("Presione cualquier tecla para salir...");
+
+            Console.ReadKey();
         }
     }
 }
