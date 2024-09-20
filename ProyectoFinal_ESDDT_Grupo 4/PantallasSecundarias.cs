@@ -39,7 +39,7 @@ namespace ProyectoFinal_ESDDT_Grupo_4
 
                         break;
                     case 4:
-
+                        PantallasSecundarias.MenuResultadosMedicos();
                         break;
                     case 5:
 
@@ -93,5 +93,50 @@ namespace ProyectoFinal_ESDDT_Grupo_4
             } while (opcion != 5);
             return opcion;
         }
+
+        private static ResultadoMedicoManager resultadoManager = new ResultadoMedicoManager();
+
+        public static void MenuResultadosMedicos()
+        {
+            int opcion = 0;
+            do
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("|---------------------------|");
+                Console.WriteLine("|      RESULTADOS MÉDICOS   |");
+                Console.WriteLine("|---------------------------|");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("1. Agregar resultado");
+                Console.WriteLine("2. Mostrar resultados");
+                Console.WriteLine("3. Actualizar resultado");
+                Console.WriteLine("4. Eliminar resultado");
+                Console.WriteLine("5. Salir");
+                Console.WriteLine("----------------------------");
+                Console.WriteLine("Elija opción:");
+                opcion = int.Parse(Console.ReadLine());
+
+                switch (opcion)
+                {
+                    case 1:
+                        // Lógica para agregar resultado
+                        break;
+                    case 2:
+                        resultadoManager.MostrarResultadosMedicos();
+                        break;
+                    case 3:
+                        // Lógica para actualizar resultado
+                        break;
+                    case 4:
+                        // Lógica para eliminar resultado
+                        break;
+                    default:
+                        break;
+                }
+
+                Console.ReadKey();
+            } while (opcion != 5);            
+        }
     }
 }
+
