@@ -44,10 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfirmacionDePago.cs" />
+    <Compile Include="GestorReservas.cs" />
+    <Compile Include="NodoReservaCita.cs" />
     <Compile Include="NodoResultadoMedico.cs" />
     <Compile Include="PantallasSecundarias.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReservaCita.cs" />
     <Compile Include="ReservaDeUsuario.cs" />
     <Compile Include="ResultadoMedicoManager.cs" />
     <Compile Include="Usuario.cs" />

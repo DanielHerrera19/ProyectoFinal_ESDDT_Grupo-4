@@ -36,7 +36,7 @@ namespace ProyectoFinal_ESDDT_Grupo_4
 
                         break;
                     case 3:
-
+                        PantallasSecundarias.MenuReservas();
                         break;
                     case 4:
                         PantallasSecundarias.MenuResultadosMedicos();
@@ -136,6 +136,47 @@ namespace ProyectoFinal_ESDDT_Grupo_4
 
                 Console.ReadKey();
             } while (opcion != 5);            
+        }
+
+        public static void MenuReservas()
+        {
+            int opcion = 0;
+            do
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("|---------------------------|");
+                Console.WriteLine("|     RESERVAS DE CITAS     |");
+                Console.WriteLine("|---------------------------|");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("1. Agregar cita");
+                Console.WriteLine("2. Mostrar cita");
+                Console.WriteLine("3. Actualizar cita");
+                Console.WriteLine("4. Eliminar cita");
+                Console.WriteLine("5. Salir");
+                Console.WriteLine("----------------------------");
+                Console.WriteLine("Elija opción:");
+                opcion = int.Parse(Console.ReadLine());
+
+                switch (opcion)
+                {
+                    case 1:
+                        //Agregar Cita
+                        break;
+                    case 2:
+                        //Mostrar cita
+                        break;
+                    case 3:
+                        //Actualizar cita
+                        break;
+                    case 4:
+                        //Eliminar cita
+                        break;
+                    default:
+                        break;
+                }
+                Console.ReadKey();
+            } while (opcion != 5);
         }
     }
 }
